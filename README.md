@@ -1,4 +1,7 @@
 # Language Translation Web Application
+
+![Screenshot](images/translator_page.png)
+
 ## Objective
 A web application that gets text or voice input from the user and translates it to the designated language. Built using HTML, CSS, and JavaScript, it provides features like text translation, text-to-speech, speech-to-text integration, and copying text to the clipboard.
 
