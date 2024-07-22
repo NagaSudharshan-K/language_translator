@@ -6,7 +6,6 @@ const fromText = document.querySelector(".from-text"),
   translateBtn = document.querySelector("button"),
   clickToRecord = document.getElementById("click_to_record");
 
-// Populate language options in select tags
 selectTag.forEach((tag, id) => {
   for (let country_code in countries) {
     let selected =
@@ -22,7 +21,6 @@ selectTag.forEach((tag, id) => {
   }
 });
 
-// Exchange text and languages
 exchangeIcon.addEventListener("click", () => {
   let tempText = fromText.value,
     tempLang = selectTag[0].value;
@@ -32,14 +30,12 @@ exchangeIcon.addEventListener("click", () => {
   selectTag[1].value = tempLang;
 });
 
-// Clear toText when fromText is empty
 fromText.addEventListener("keyup", () => {
   if (!fromText.value) {
     toText.value = "";
   }
 });
 
-// Translate text when button is clicked
 translateBtn.addEventListener("click", () => {
   let text = fromText.value.trim(),
     translateFrom = selectTag[0].value,
@@ -55,7 +51,6 @@ translateBtn.addEventListener("click", () => {
     });
 });
 
-// Handle click events for icons
 icons.forEach((icon) => {
   icon.addEventListener("click", ({ target }) => {
     if (!fromText.value || !toText.value) return;
@@ -103,7 +98,7 @@ clickToRecord.addEventListener("click", () => {
   console.log("Starting speech recognition...");
   const recognition = new (window.SpeechRecognition ||
     window.webkitSpeechRecognition)();
-  recognition.lang = selectTag[0].value; // Set the language for speech recognition
+  recognition.lang = selectTag[0].value;
   recognition.interimResults = false;
 
   recognition.start();
